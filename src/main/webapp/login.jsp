@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="Login" method="post" class="centered-form bg-white p-4">
+        <form action="LoginServlet" method="post" class="centered-form bg-white p-4">
             <h2 class="text-center">Login</h2>
             <div class="mb-3">
                 <label class="form-label">Username</label>

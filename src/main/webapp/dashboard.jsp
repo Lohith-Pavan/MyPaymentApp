@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.payment.model.UserDto" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,22 +31,18 @@
     <div class="container dashboard-container">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="text-primary">Payments Dashboard</h2>
-            <a href="Logout.java" class="btn btn-danger btn-custom">Logout</a>
+            <a href="LogoutServlet" class="btn btn-danger btn-custom">Logout</a>
         </div>
-        <%String fname = (String)session.getAttribute("fName");
-          String lname = (String)session.getAttribute("lName");
-          String phno = (String)session.getAttribute("phno");
-  		  String email = (String)session.getAttribute("email");
-  		  String address = (String)session.getAttribute("address"); 
+        <%UserDto user = (UserDto)session.getAttribute("user");
         %>
         <div class="row">
         	<div class="col-md-4 card-custom border p-3">
                 <h6>Profile</h6>
-                <p><strong>First Name:</strong><%=fname %></p>
-                <p><strong>Last Name:</strong><%=lname %></p>
-                <p><strong>Phone Number:</strong><%=phno %></p>
-                <p><strong>Email:</strong><%=email %></p>
-                <p><strong>Address:</strong><%=address %></p>
+                <p><strong>First Name:</strong><%=user.getFirstName() %></p>
+                <p><strong>Last Name:</strong><%=user.getLastName() %></p>
+                <p><strong>Phone Number:</strong><%=user.getPhoneNumber() %></p>
+                <p><strong>Email:</strong><%=user.getEmail() %></p>
+                <p><strong>Address:</strong><%=user.getAddress() %></p>
                 <a href="editBankAcct.jsp" class="btn btn-success btn-sm btn-custom">Edit</a>
             </div>
             <div class="col-md-6 card-custom">

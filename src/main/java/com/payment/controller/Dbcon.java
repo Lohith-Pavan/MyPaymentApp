@@ -1,4 +1,4 @@
-package com.payment;
+package com.payment.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
